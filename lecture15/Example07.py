@@ -7,24 +7,33 @@ def sort_dic(d: Dict):
        lk.append(key)
        lv.append(val) 
 
-   print(lk)  
-   print(lv)
+   print(sorted(lk))  
+   print(sorted(lv))
 
 
 def create_dic():
     d1 = {
-        'key-1': 1,
-        'key-2': 2,
         'key-3': 3,
+        'key-2': 2,
+        'key-1': 1,
     }
 
     d2 = {
-        'key-4': 4,
-        'key-5': 5,
         'key-6': 6,
+        'key-5': 5,
+        'key-4': 4,
     }
 
-    l = [d1, d2]
+    d3 = {
+        'key-15': 15,
+        'key-3': 3,
+        'key-2': 2,
+        'key-9': 9,
+        'key-12': 12,
+
+    }
+
+    l = [d1, d2, d3]
 
     for el in l:
         sort_dic(el)
