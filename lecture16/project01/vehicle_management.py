@@ -15,6 +15,6 @@ def map_user_input(user_input: int):
     elif user_input == 6:
         exit(0)
     else:
-        print("Unknown option")
+        raise RuntimeError(f"Unknown main menu option {user_input}")
 
    
