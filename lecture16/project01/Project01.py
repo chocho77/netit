@@ -12,7 +12,3 @@ if __name__ == '__main__':
         else:
             print("Wrong options")
     
-    # while True:
-       # print_user_options
-       # user_input = take_user_input()
-       # map_user_input(user_input)
