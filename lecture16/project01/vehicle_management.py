@@ -1,3 +1,5 @@
+from sys import exit
+
 MAIN_MENU_OPTIONS = (
       "Add vehicle to Inventory",
       "Delete vehicle from Inventory",
@@ -8,4 +10,11 @@ MAIN_MENU_OPTIONS = (
    )
 
 def map_user_input(user_input: int):
-    print("Called map_user_input")
+    if user_input == 1:
+        pass
+    elif user_input == 6:
+        exit(0)
+    else:
+        print("Unknown option")
+
+   
