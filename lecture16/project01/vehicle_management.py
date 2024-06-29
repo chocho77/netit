@@ -6,3 +6,6 @@ MAIN_MENU_OPTIONS = (
       "Export Current Inventory",
       "Quit"
    )
+
+def map_user_input(user_input: int):
+    print("Called map_user_input")
