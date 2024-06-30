@@ -5,6 +5,11 @@ def get_db():
     
     return db
 
+def clear_db():
+    global db
+    
+    return db.clear()
+
 
 
 def add_vehicle_to_db(make: str,
