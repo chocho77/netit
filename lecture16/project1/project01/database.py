@@ -8,4 +8,9 @@ def add_vehicle_to_db(make: str,
                       range: float):
     db.append(make, model, year, color, range)
 
+
+def delete_vehicle(id: int):
+    db.pop(id)
+
+ 
     
