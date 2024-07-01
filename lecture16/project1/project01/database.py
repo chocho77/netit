@@ -23,5 +23,18 @@ def add_vehicle_to_db(make: str,
 def delete_vehicle(id: int):
     db.pop(id)
 
+def view_vehicle(id: int):
+    pass
+
+def update_vehicle(id: int,
+                   make: str,
+                   model: str,
+                   year: int,
+                   color: str,
+                   range: float
+                   ):
+    pass
+
+
  
     
