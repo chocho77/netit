@@ -12,7 +12,7 @@ def clear_db():
 
 
 
-def add_vehicle_to_db(make: str,
+def add_vehicle(make: str,
                       model: str,
                       year: int,
                       color: str,
@@ -24,7 +24,7 @@ def delete_vehicle(id: int):
     db.pop(id)
 
 def view_vehicle(id: int):
-    pass
+    return db[id]
 
 def update_vehicle(id: int,
                    make: str,
@@ -33,7 +33,7 @@ def update_vehicle(id: int,
                    color: str,
                    range: float
                    ):
-    pass
+    db[id] = (make, model, year, color, range)
 
 
  
