@@ -1,6 +1,6 @@
 from sys import exit
 from typing import Tuple
-from database import add_vehicle, delete_vehicle, get_db
+from database import add_vehicle, delete_vehicle, get_db, update_vehicle
 
 MAIN_MENU_OPTIONS = (
       "Add vehicle to Inventory",
@@ -13,35 +13,49 @@ MAIN_MENU_OPTIONS = (
 
 def map_user_input(user_input: int):
     if user_input == 1:
-        vehicle_data = take_user_add_vehicle_imput()
+        vehicle_data = take_user_add_vehicle_input()
         # validate
         add_vehicle(*vehicle_data)
         print("Vehicle added successfully")
     elif user_input == 2:
-        _id = take_user_delete_vehicle_input()
-        # validate
-        delete_vehicle(int(_id))
-        print("Vehicle deleted successfully")
+        try:
+            _id = take_user_delete_vehicle_input()
+            # validate
+            delete_vehicle(_id)
+            print("Vehicle deleted successfully")
+        except ValueError:
+            print("Wrong id.")
     elif user_input == 3:
         print_inventory()
+    elif user_input == 4:
+        try:
+            update_vehicle(*take_user_update_vehicle_input())
+            print("Vehicle updated successfully")
+        except ValueError:
+            print("Wrong id.")
         
     elif user_input == 6:
         exit(0)
     else:
         raise RuntimeError(f"Unknown main menu option {user_input}")
     
-def take_user_add_vehicle_imput() \
+def take_user_add_vehicle_input() \
     -> Tuple[str, str, str, str, str]:
-    make = input()
-    model = input()
-    year = input()
-    color = input()
-    range = input()
+    make = input("Enter manufacturer:\n")
+    model = input("Enter model:\n")
+    year = input("Enter year:\n")
+    color = input("Enter color:\n")
+    range = input("Enter range:\n")
 
     return make, model, year, color, range
 
-def take_user_delete_vehicle_input():
-    return input("Enter id")
+def take_user_delete_vehicle_input()->int:
+    return int(input("Enter id:\n")) - 1
+
+def take_user_update_vehicle_input()-> Tuple[int,str,str,str,str,str]:
+    _id = take_user_delete_vehicle_input()
+    vehicle_data = take_user_add_vehicle_input()
+    return (_id,) + vehicle_data
 
 def print_inventory():
     print("Car details:")

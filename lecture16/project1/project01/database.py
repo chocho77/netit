@@ -35,6 +35,10 @@ def update_vehicle(id: int,
                    ):
     db[id] = (make, model, year, color, range)
 
+def export_data(filepath: str):
+    pass
+
+
 
  
     
