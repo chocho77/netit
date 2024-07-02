@@ -1,6 +1,6 @@
 from sys import exit
 from typing import Tuple
-from database import add_vehicle, delete_vehicle
+from database import add_vehicle, delete_vehicle, get_db
 
 MAIN_MENU_OPTIONS = (
       "Add vehicle to Inventory",
@@ -23,7 +23,7 @@ def map_user_input(user_input: int):
         delete_vehicle(int(_id))
         print("Vehicle deleted successfully")
     elif user_input == 3:
-        pass
+        print_inventory()
         
     elif user_input == 6:
         exit(0)
@@ -42,6 +42,12 @@ def take_user_add_vehicle_imput() \
 
 def take_user_delete_vehicle_input():
     return input("Enter id")
+
+def print_inventory():
+    print("Car details:")
+    for i, car_data in enumerate(get_db(),start=1):
+        print(f"#{i} {car_data[0]} {car_data[1]} {car_data[2]} {car_data[3]} {car_data[4]}")
+    print()    
 
 
 
