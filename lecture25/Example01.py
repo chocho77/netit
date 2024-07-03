@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 
+# https://matplotlib.org/stable/gallery/index.html
+
 fig, ax = plt.subplots()
 
 fruits = ['apple', 'blueberry', 'cherry', 'orange']
