@@ -1,3 +1,5 @@
+import csv
+
 db = []
 
 def get_db():
@@ -36,7 +38,12 @@ def update_vehicle(id: int,
     db[id] = (make, model, year, color, range)
 
 def export_data(filepath: str):
-    pass
+    with open(filepath, 'w', newline='') as csvfile:
+        spamwriter = csv.writer(csvfile)
+        for row in get_db():
+            spamwriter.writerow(row)
+
+
 
 
 

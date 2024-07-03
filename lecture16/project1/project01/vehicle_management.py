@@ -1,6 +1,6 @@
 from sys import exit
 from typing import Tuple
-from database import add_vehicle, delete_vehicle, get_db, update_vehicle
+from database import add_vehicle, delete_vehicle, get_db, update_vehicle, export_data
 
 MAIN_MENU_OPTIONS = (
       "Add vehicle to Inventory",
@@ -33,7 +33,9 @@ def map_user_input(user_input: int):
             print("Vehicle updated successfully")
         except ValueError:
             print("Wrong id.")
-        
+    elif user_input == 5:
+            export_data("data.csv")
+            print("Data exported successfully.")
     elif user_input == 6:
         exit(0)
     else:
