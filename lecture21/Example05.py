@@ -8,6 +8,8 @@ def test():
         with open("data.txt", "a") as f:
             f.write("Hello, Python again!\n")
             f.write("The file exists.")
+    else:
+        print("File does not exist!")
     
 
 if __name__ == '__main__':
