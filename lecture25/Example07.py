@@ -4,9 +4,9 @@ import numpy as np
 def main_func():
     fig, axes = plt.subplots(2,2, figsize=(8, 8))
     colors = ["g", "b", "r", "y"]
-    marker = ["o", "^", "x", "*"]
+    markers = ["o", "^", "x", "*"]
     for i, ax in enumerate(axes.reshape(4)):
-        ax.plot(np.random.randint(0,10, 10), np.random.randint(5,20, 10))
+        ax.plot(np.random.randint(0,10, 10), np.random.randint(5,20, 10), f"{colors[i]}{markers[i]}-")
     
 
     plt.show()
