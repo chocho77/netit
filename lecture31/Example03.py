@@ -1,12 +1,19 @@
-import time
+from time import sleep, perf_counter
+
 # https://www.pythontutorial.net/python-concurrency/python-threading/
 
-def do_something(seconds, *args, **kwargs):
-    print(f'Sleeping { seconds } seconds ... ')
-    time.sleep(seconds)
-    return f'Done sleeping for {seconds} seconds.'
 
-if __name__ == '__main__':
-    start_time = time.perf_counter()
+def task():
+    print('Starting a task...')
+    sleep(1)
+    print('done')
 
-    with concurrent.
+
+start_time = perf_counter()
+
+task()
+task()
+
+end_time = perf_counter()
+
+print(f'It took {end_time- start_time: 0.2f} second(s) to complete.')
