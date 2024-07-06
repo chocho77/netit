@@ -5,6 +5,10 @@ def do_something(*args, **kwargs):
     raise Exception('Something bad happend')
     return 'String'
 
+def callback_function(future_object):
+    _exception_raised = future_object.exception()
+    print('Callback was called')
+
 if __name__ == '__main__':
     start = time.perf_counter()
 
@@ -15,6 +19,7 @@ if __name__ == '__main__':
 
         futures = []
         future =executor.submit(do_something, secs)
+        future.add_done_callback(callback_function)
         futures.append(future)
 
         for future in futures:
