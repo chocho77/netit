@@ -1,8 +1,11 @@
-# SuperFastPython.com
-# example of extending the Process class and adding shared attributes
 from time import sleep
 from multiprocessing import Process
 from multiprocessing import Value
+
+
+# SuperFastPython.com
+# example of extending the Process class and adding shared attributes
+# learn source : https://superfastpython.com/multiprocessing-in-python/
  
 # custom process class
 class CustomProcess(Process):
