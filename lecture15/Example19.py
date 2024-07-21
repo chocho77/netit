@@ -6,6 +6,7 @@ def rec_fun(n: int)->int:
     print(f'd = {d}')
     return rec_fun(n - 1)
 
+
 if __name__ == '__main__':
     num = 15
     rec_fun(num)
