@@ -9,7 +9,7 @@ if __name__ == '__main__':
   
   atlas_client = connect_to_atlas_cluster()
 
-  #list databases
+  #list database
   print(atlas_client.list_database_names())
   
   #list_own = ['mongodb+srv://cluster0.kupvfos.mongodb.net/',' ','--username chavdar']
