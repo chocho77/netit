@@ -2,6 +2,10 @@ import sys
 #from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton as qt
 #import PyQt6.QtWidgets as qt
 from PyQt5 import QtWidgets as qt
+from PyQt5 import QtCore as qtc
+from PyQt5 import QtGui as qtg
+
+# source: https://www.pythonguis.com/tutorials/pyqt6-signals-slots-events/
 
 class MainWindow(qt.QMainWindow):
     def __init__(self, *args, **kwargs):
@@ -26,3 +30,4 @@ window = MainWindow()
 window.show()
 
 app.exec()
+
