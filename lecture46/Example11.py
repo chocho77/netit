@@ -3,6 +3,7 @@ import sys
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QApplication, QLabel, QMainWindow, QTextEdit
 
+# source: https://www.pythonguis.com/tutorials/pyqt6-signals-slots-events/
 
 class MainWindow(QMainWindow):
     def __init__(self):
