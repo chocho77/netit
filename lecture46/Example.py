@@ -1,10 +1,11 @@
 import sys
+import os
 from PyQt5 import QtWidgets 
 from PyQt5 import QtCore as qtc
 from PyQt5 import QtGui as qtg
 
 class MainWindow(QtWidgets.QWidget):
-  def __init__(self, *args, **kwargs):
+  def __init__(self):
     super().__init__()
     # ------------------------ your code start here --------------------------
 
@@ -16,12 +17,13 @@ class MainWindow(QtWidgets.QWidget):
 
 
 if __name__ == '__main__':
-  
+  os.environ["XDG_SESSION_TYPE"] = "xcb"
   app = QtWidgets.QApplication(sys.argv)
 
   window = MainWindow()
 
-  sys.exit(app.exec_)
+  app.exec_
+
 
   
 
