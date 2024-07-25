@@ -8,7 +8,7 @@ password ="n9q8DF1#zX")
 # creating cursor object
 cursorObj = connection.cursor()
 # selecting the database 
-cursorObj.execute("USE radiotheaters")
+cursorObj.execute("USE bnr")
 # Fetching a single row 
 print("Database selected Successfully...!")
 # disconnecting from server
